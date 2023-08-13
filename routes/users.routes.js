@@ -20,6 +20,12 @@ usersRouter.put('/:operatorID/users/:userID', requireSignIn, isAuth, isAdmin, up
 
 usersRouter.delete('/:operatorID/users/:userID', requireSignIn, isAuth, isAdmin, deleteUser);
 
+// For updating the user profile
+usersRouter.put('/:operatorID/users/updateProfile/:userID', requireSignIn, isAuth, updateUser);
+
+// For getting self-updated-profile of user
+usersRouter.get('/:operatorID/users/getSelfProfile/:userID', requireSignIn, isAuth, getSingleUserByID);
+
 
 usersRouter.param("operatorID", attachProfileOfUser);
 
