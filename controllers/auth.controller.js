@@ -138,9 +138,8 @@ exports.login = async (req, res) => {
                 // If the email and password are correct
                 // Creating a jwt token
                 const accessToken = jwt.sign({_id : existingUser._id}, process.env.SECRET_KEY_FOR_LOGIN);
-                // Sending the jwt token into the cookies
-                // const expirationDate = new Date(Date.now() + 60 * 60 * 1000); //
-                // res.cookie("accessToken", accessToken, {expires : expirationDate}); 
+                // Sending the jwt token to frontend, there it will be stored in localStorage and used for authenticating the frontend routes
+                
 
                 // Sending the user profile
                 const userProfile = {...existingUser.toObject()};
