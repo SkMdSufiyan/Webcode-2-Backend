@@ -8,7 +8,7 @@ const authRouter = express.Router(); // Creating an express router
 authRouter.post('/signup', signup); // Route for signup
 authRouter.get('/activate-account/:accountActivationToken', activateAccount); // Route for account activation
 authRouter.post('/login', login); // Route for login
-authRouter.get('/logout', logout); // Route for logout
+authRouter.get('/logout', logout); // Route for logout (will be called from the frontend if the accessToken is stored in cookies)
 
 authRouter.post('/forgot-password', forgotPasswordSendEmail); // Route for sending password reset link through email
 
