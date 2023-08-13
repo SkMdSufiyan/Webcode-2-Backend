@@ -162,7 +162,7 @@ exports.login = async (req, res) => {
 
 }
 
-
+// If the accessToken is stored in cookies from the backend, then the below logout function will be called from frontend for the logout operation
 // Exporting the function which performs logout
 exports.logout = async (req, res) => {
     try{
